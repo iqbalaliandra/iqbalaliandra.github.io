@@ -509,7 +509,7 @@ section {
 .resume .resume-title {
   font-size: 26px;
   font-weight: 700;
-  margin-top: 20px;
+  margin-top: 5px;
   margin-bottom: 20px;
   color: #45505b;
 }
@@ -545,7 +545,7 @@ section {
 }
 
 .resume .resume-item ul li {
-  padding-bottom: 10px;
+  padding-bottom: 3px;
 }
 
 .resume .resume-item:last-child {
