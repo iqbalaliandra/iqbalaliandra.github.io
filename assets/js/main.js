@@ -1,13 +1,26 @@
 (function() {
   "use strict";
 
-  window.addEventListener('load', function() {
-    var music = document.getElementById("background-music");
-    music.muted = false; // Nonaktifkan mute setelah halaman dimuat
-    music.volume = 1.0;  // Set volume ke 100%
-    music.play().catch(function(error) {
-      console.log("Autoplay tidak berhasil karena: ", error);
-    });
+  var music = document.getElementById("background-music");
+  var musicButton = document.getElementById("music-button");
+
+  // Variabel untuk melacak status pemutaran musik
+  var isPlaying = false;
+  music.volume = 0.2;
+
+  // Event listener untuk tombol Music
+  musicButton.addEventListener('click', function() {
+    if (!isPlaying) {
+      music.play();  // Putar musik
+      musicButton.querySelector('i').classList.remove('bx-play');  // Ganti ikon dari Play ke Pause
+      musicButton.querySelector('i').classList.add('bx-pause');
+      isPlaying = true;
+    } else {
+      music.pause();  // Hentikan musik
+      musicButton.querySelector('i').classList.remove('bx-pause'); // Ganti ikon dari Pause ke Play
+      musicButton.querySelector('i').classList.add('bx-play');
+      isPlaying = false;
+    }
   });
   
   /**
