@@ -1,6 +1,15 @@
 (function() {
   "use strict";
 
+  window.addEventListener('load', function() {
+    var music = document.getElementById("background-music");
+    music.muted = false; // Nonaktifkan mute setelah halaman dimuat
+    music.volume = 1.0;  // Set volume ke 100%
+    music.play().catch(function(error) {
+      console.log("Autoplay tidak berhasil karena: ", error);
+    });
+  });
+  
   /**
    * Easy selector helper function
    */
