@@ -6,11 +6,12 @@
 
   // Variabel untuk melacak status pemutaran musik
   var isPlaying = false;
-  music.volume = 0.2;
 
   // Event listener untuk tombol Music
+  if (musicButton) {
   musicButton.addEventListener('click', function() {
     if (!isPlaying) {
+      music.volume = 0.2;
       music.play();  // Putar musik
       musicButton.querySelector('i').classList.remove('bx-play');  // Ganti ikon dari Play ke Pause
       musicButton.querySelector('i').classList.add('bx-pause');
@@ -20,8 +21,10 @@
       musicButton.querySelector('i').classList.remove('bx-pause'); // Ganti ikon dari Pause ke Play
       musicButton.querySelector('i').classList.add('bx-play');
       isPlaying = false;
-    }
-  });
+    }});
+  } else {
+    console.warn('Element not found');
+  }
   
   /**
    * Easy selector helper function
