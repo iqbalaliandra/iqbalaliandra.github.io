@@ -12,8 +12,8 @@ fetch(event.target.action, {
 }
 }).then(response => {
   if (response.ok) {
-    sentMessage.style.removeProperty('display');
-    console.log("response")
+    document.querySelector('.sent-message').classList.add('d-block');
+    console.log("response bisa")
     form.reset()
   } else {
     response.json().then(data => {
