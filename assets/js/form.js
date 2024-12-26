@@ -11,7 +11,7 @@ fetch(event.target.action, {
 }
 }).then(response => {
   if (response.ok) {
-    status.innerHTML = "Thanks for your submission!";
+    thisForm.querySelector('.error-message').classList.remove('d-block');
     form.reset()
   } else {
     response.json().then(data => {
