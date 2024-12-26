@@ -12,7 +12,7 @@ fetch(event.target.action, {
 }
 }).then(response => {
   if (response.ok) {
-    sentMessage.style.removeProperty(display);
+    sentMessage.style.removeProperty('display');
     console.log("response")
     form.reset()
   } else {
