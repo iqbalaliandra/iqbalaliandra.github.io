@@ -3,7 +3,7 @@ async function handleSubmit(event) {
 event.preventDefault();
 var status = document.getElementById("my-form-status");
 var data = new FormData(event.target);
-let thisForm = this;
+let sentMessage = thisForm.querySelector('.sent-message')
 fetch(event.target.action, {
   method: form.method,
   body: data,
@@ -12,6 +12,9 @@ fetch(event.target.action, {
 }
 }).then(response => {
   if (response.ok) {
+    sentMessage.forEach(sentMessage => {
+        sentMessage.style.removeProperty(display);
+    });
     thisForm.querySelector('.sent-message').classList.remove('d-block');
     form.reset()
   } else {
