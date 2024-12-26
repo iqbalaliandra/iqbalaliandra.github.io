@@ -15,6 +15,7 @@ fetch(event.target.action, {
     sentMessage.forEach(sentMessage => {
         sentMessage.style.removeProperty(display);
     });
+    console.log("response")
     form.reset()
   } else {
     response.json().then(data => {
@@ -27,6 +28,8 @@ fetch(event.target.action, {
 }
 }).catch(error => {
   status.innerHTML = "Oops! There was a problem submitting your form"
+  console.error(error)
+  console.log(response)
 });
 }
 form.addEventListener("submit", handleSubmit)
