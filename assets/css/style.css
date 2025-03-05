@@ -568,7 +568,7 @@ section {
   padding-top: 25px;
 }
 
-.resume a {
+.resume .section-title a {
   background: #0563bb;
   border: 0;
   padding: 10px 35px;
@@ -577,7 +577,7 @@ section {
   border-radius: 50px;
 }
 
-.resume a:hover {
+.resume .section-title a:hover {
   background: #0678e3;
 }
 
